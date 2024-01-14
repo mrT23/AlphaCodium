@@ -84,8 +84,8 @@ python -m alpha_codium.solve_dataset \
 - The `split_name` can be either `valid` or `test`.
 - `database_solution_path` is the path to the directory where the solutions will be saved.
 - The `dataset` section in the configuration file contains the configuration for the running and evaluation a dataset.
-- Note that this is a long process, and it may take a few days to complete with large models (e.g. GPT-4), and several iterations per problem. 
-- `dataset.num_iterations` defines the number of iterations to run for each problem (pass@K). For large number of iterations, you may want to introduce some randomness and different options for each iteration.
+- Note that this is a long process, and it may take a few days to complete with large models (e.g. GPT-4) and several iterations per problem. 
+- `dataset.num_iterations` defines the number of iterations for each problem (pass@K). For large number of iterations, it is recommended to introduce some randomness and different options for each iteration to achieve top results.
 
 ### Running the evaluation
 
