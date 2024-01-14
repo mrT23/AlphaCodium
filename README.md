@@ -45,6 +45,7 @@ key = "..."
 
 ### Configuration
 The file: `alpha_codium/settings/configuration.toml` contains the configuration for the project.
+In the `config` section you can choose the model you want to use ("gpt-4", "gpt-3.5-turbo-16k", or others).
 
 ### Solving a specific problem
 To solve a specific problem with AlphaCodium, from the root folder run:
@@ -60,6 +61,7 @@ python -m alpha_codium.solve_problem \
 - The followings sections in the configuration file: 
 `solve`, `self_reflection`,`possible_solutions`,`generate_ai_tests`,`initial_code_generation`,`public_tests`, `ai_tests`  
 enable to adjust possible configurations for the different stages of the flow.
+- Each run logs the results to a file named `alpha_codium/example.log`. Reviewing the log file is a good way to understand what is going on in each stage of the flow.
 
 Example problem (test set, problem number 12):
 <p align="center">

@@ -115,7 +115,7 @@ def solve_problem(dataset_name,
 
     # find problem
     problem = data_provider.find_problem(ds=data_provider.dataset, problem_name=problem_name, split_name=split_name)
-    logger.info(f"problem['cf_tags']: {problem['cf_tags']}")
+    logger.info(f"problem['name']: {problem['name']}")
 
     # # check if problem is valid (at least one of the provided solutions actually passes the generated tests)
     # if not problem.get('is_valid_problem', True):
