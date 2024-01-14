@@ -31,7 +31,7 @@ Many of the principles and best practices we acquired in this work, we believe, 
 
 ## Installation
 
-(1) setup a virtual environment and run: `pip install -e .`
+(1) setup a virtual environment and run: `pip install -r requirements.txt`
 
 (2) Duplicate the file `alpha_codium/settings/.secrets_template.toml`, rename it as `.secrets.toml`, and fill your openai api key:
 ```
@@ -49,11 +49,12 @@ The file: `alpha_codium/settings/configuration.toml` contains the configuration 
 ### Solving a specific problem
 To solve a specific problem with AlphaCodium, from the root folder run:
 ```
-python -m alpha_codium.gen.solve_problem\
---dataset_name /path/to/dataset\
---split_name test\
---problem_number = 0
+python -m alpha_codium.solve_problem \
+--dataset_name /path/to/dataset \
+--split_name test \
+--problem_number 0
 ```
+- The `dataset_name` is the path to the dataset folder you downloaded in the installation step.
 - Note that the validation set contain 117 problems, and the test set contain 165 problems, so the `problem_number` parameter should be accordingly (zero-based)
 - The `split_name` can be either `valid` or `test`.
 - The followings sections in the configuration file: 
@@ -72,8 +73,8 @@ Example problem (test set, problem number 12):
 ### Solving the entire dataset
 to solve the entire dataset with AlphaCodium, from the root folder run:
 ```
-python -m alpha_codium.gen.solve_dataset\
---dataset_name /path/to/dataset\
+python -m alpha_codium.solve_dataset \
+--dataset_name /path/to/dataset \
 --split_name test
 --database_solution_path /path/to/output/dir/dataset_output.json
 ```
@@ -86,7 +87,7 @@ python -m alpha_codium.gen.solve_dataset\
 
 Once you generate a solution for the entire dataset (valid or test), you can evaluate it by running:
 ```
-python -m alpha_codium.gen.evaluate_dataset\
+python -m alpha_codium.evaluate_dataset\
 --dataset_name /path/to/dataset\
 --split_name test\
 --database_solution_path /path/to/output/dir/dataset_output.json
