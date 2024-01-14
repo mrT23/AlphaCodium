@@ -26,11 +26,11 @@ async def run_fix_code_from_tests_failure(self, problem,error_str):
             # diff patch
             diff = difflib.unified_diff(problem['code_prev_solution'].splitlines(keepends=True),
                                         response_fixed_code.splitlines(keepends=True))
-            patch = ''.join(diff)
-            if get_settings().solve.reduce_verbose:
-                logger.debug(f"diff:\n{patch}")
-            else:
-                logger.info(f"diff:\n{patch}")
+            # patch = ''.join(diff)
+            # if get_settings().solve.reduce_verbose:
+            #     logger.debug(f"diff:\n{patch}")
+            # else:
+            #     logger.info(f"diff:\n{patch}")
 
             return problem
 

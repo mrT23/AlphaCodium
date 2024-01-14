@@ -20,7 +20,7 @@ async def run_choose_best_solution(self, problem):
             # inference
             response_best_solution, _ = await send_inference(f)
             response_best_solution_yaml = load_yaml(response_best_solution,
-                                        keys_fix_yaml=["name", "content","why","input","output"])
+                                                    keys_fix_yaml=["name:", "content:", "why:", "- "])
 
             # update best solution
             problem['s_best_solution'] = response_best_solution

@@ -17,7 +17,7 @@ async def run_validate_ai_tests(self, problem):
             f = functools.partial(self._run, problem=problem, prompt="code_contests_prompts_validate_ai_tests")
             response_problem_tests, _ = await send_inference(f)
             problem['problem_ai_tests'] = load_yaml(response_problem_tests,
-                                        keys_fix_yaml=["input","output","explanation","what_was_wrong"])['tests']
+                                        keys_fix_yaml=["input:", "output:", "explanation", "what_was_wrong:"])['tests']
 
             # clean up and parse the response
             for p in problem['problem_ai_tests']:

@@ -124,8 +124,9 @@ def load_yaml(response_text: str, keys_fix_yaml: List[str] = []) -> dict:
     try:
         data = yaml.safe_load(response_text)
     except Exception as e:
-        get_logger().error(f"Failed to parse AI prediction: {e}")
         data = try_fix_yaml(response_text, keys_fix_yaml=keys_fix_yaml)
+        if not data:
+            get_logger().info(f"Failed to parse AI YAML prediction: {e}")
     return data
 
 
@@ -136,7 +137,7 @@ def try_fix_yaml(response_text: str, keys_fix_yaml: List[str] = []) -> dict:
     response_text_lines_copy = response_text_lines.copy()
     for i in range(0, len(response_text_lines_copy)):
         for key in keys:
-            if key in response_text_lines_copy[i] and not '|' in response_text_lines_copy[i]:
+            if response_text_lines_copy[i].strip().startswith(key) and not '|' in response_text_lines_copy[i]:
                 response_text_lines_copy[i] = response_text_lines_copy[i].replace(f'{key}',
                                                                                   f'{key} |-\n        ')
     try:
@@ -144,5 +145,4 @@ def try_fix_yaml(response_text: str, keys_fix_yaml: List[str] = []) -> dict:
         get_logger().info(f"Successfully parsed AI prediction after adding |-\n")
         return data
     except:
-        # get_logger().info(f"Failed to parse AI prediction after adding |-\n")
         raise "yaml parsing error"

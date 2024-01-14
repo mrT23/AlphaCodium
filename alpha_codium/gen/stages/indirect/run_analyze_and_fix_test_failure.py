@@ -44,11 +44,11 @@ async def run_analyze_and_fix_test_failure(self, problem, error_str):
             # diff patch
             diff = difflib.unified_diff(problem['code_prev_solution'].splitlines(keepends=True),
                                         problem['code_recent_solution'].splitlines(keepends=True))
-            patch = ''.join(diff)
-            if get_settings().solve.reduce_verbose:
-                logger.debug(f"diff:\n{patch}")
-            else:
-                logger.info(f"diff:\n{patch}")
+            # patch = ''.join(diff)
+            # if get_settings().solve.reduce_verbose:
+            #     logger.debug(f"diff:\n{patch}")
+            # else:
+            #     logger.info(f"diff:\n{patch}")
 
             return problem
         except Exception as e:
