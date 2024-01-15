@@ -97,6 +97,9 @@ python -m alpha_codium.evaluate_dataset\
 --database_solution_path /path/to/output/dir/dataset_output.json
 ```
 
+## General usage
+a section where we explain how part of AlphaCodium are relevant to general usage, and not just for CodeContests. Add a nice graph or two
+
 ## Acknowledgments
 Our process CodeContests dataset is based on the original [CodeContests](https://huggingface.co/datasets/deepmind/code_contests) dataset.
 We removed the train set (which is not relevant for our work), and did some post-processing and cleaning to the validation and test sets.
