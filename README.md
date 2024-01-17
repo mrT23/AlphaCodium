@@ -1,9 +1,9 @@
 # Code Generation with AlphaCodium: From Prompt Engineering to Flow Engineering
 
-[Paper](https://arxiv.org/abs/2009.14119) |
+[Paper](https://arxiv.org/abs/2401.08500) |
 [Dataset](https://huggingface.co/datasets/talrid/CodeContests_valid_and_test_AlphaCodium/blob/main/codecontests_valid_and_test_processed_alpha_codium.zip)
 
-
+Official Implementation
 > Tal Ridnik, Dedy Kredo, Itamar Friedman <br/> CodiumAI
 
 **Abstract**
@@ -104,11 +104,12 @@ We removed the train set (which is not relevant for our work), and did some post
 
 ## Citation
 ```
- @misc{benbaruch2020asymmetric, 
-        title={Asymmetric Loss For Multi-Label Classification}, 
-        author={Emanuel Ben-Baruch and Tal Ridnik and Nadav Zamir and Asaf Noy and Itamar Friedman and Matan Protter and Lihi Zelnik-Manor}, 
-        year={2020}, 
-        eprint={2009.14119},
-        archivePrefix={arXiv}, 
-        primaryClass={cs.CV} }
+@misc{ridnik2024code,
+      title={Code Generation with AlphaCodium: From Prompt Engineering to Flow Engineering}, 
+      author={Tal Ridnik and Dedy Kredo and Itamar Friedman},
+      year={2024},
+      eprint={2401.08500},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 ```
